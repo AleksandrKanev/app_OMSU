@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Заявки{% endblock %}
+{% block navigate %}
+<!--<form method="post" action="{% url 'logout' %}">-->
+<!--    {% csrf_token %}-->
+<!--    <button type="submit">Выйти</button>-->
+<!--</form>-->
+{% endblock %}
+{% block content %}
+   {% for application in applications %}
+<br><a href="{% url 'get_application' application.pk %}">{{ application }}</a>
+    {% endfor %}
+{% endblock %}

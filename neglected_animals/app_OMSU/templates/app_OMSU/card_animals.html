@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Карточки животных{% endblock %}
+{% block navigate %}
+
+{% endblock %}
+{% block content %}
+   {% for card_animal in card_animals %}
+<br><a href="{% url 'get_animal' card_animal.pk %}">{{ card_animal }}</a>
+    {% endfor %}
+{% endblock %}

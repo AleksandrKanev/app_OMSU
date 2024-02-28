@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block navigate %}
+
+<!--<div>-->
+<!--    <ul class="sidebar-nav">-->
+<!--        <a href="{% url 'login' %}">Войти</a>-->
+<!--    </ul>-->
+<!--</div>-->
+{% endblock %}
+{% block content %}
+
+<h3>{{ message }}</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}
